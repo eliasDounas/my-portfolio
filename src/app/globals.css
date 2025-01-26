@@ -1,0 +1,36 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    height: 100vh;
+    margin: 0rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #0D1717;
+    /* Gray #171717 */
+    /* Dark Blueish #0B1215 */
+    /* Dark Green #0D1717 */
+  }
+
+  @layer components {
+    .mouse-aura {
+      @apply fixed inset-0 pointer-events-none;
+      background-image: radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+        rgba(110, 93, 178, 0.25) 0%,
+        rgba(112, 110, 121, 0.125) 30%,
+        rgba(112, 110, 121, 0) 50%
+      );
+  
+      /* Media query for touch devices */
+      @media (hover: none) and (pointer: coarse) {
+        background-image: radial-gradient(
+          circle at top left,
+          rgba(63, 81, 181, 0.3) 0%,
+          rgba(63, 81, 181, 0.15) 30%,
+          rgba(63, 81, 181, 0) 50%
+        );
+      }
+    }
+  }
