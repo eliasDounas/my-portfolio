@@ -1,47 +1,50 @@
-export default function ExperienceCard() {
+import { FiArrowUpRight } from "react-icons/fi";
+
+export default function ExperienceCard({
+  date,
+  title,
+  link,
+  description,
+  tags,
+}) {
     return (
-      <div className="group max-w-xl p-6 hover:bg-gray-900 text-white rounded-2xl shadow-lg hover:shadow-xl transition duration-100">
+      <div className="group/inner max-w-xl p-6 hover:bg-gray-900 hover:!opacity-100 group-hover/outer:opacity-50 transition-opacity text-white rounded-2xl shadow-lg hover:shadow-xl">
         {/* Responsive Layout for Date + Title */}
         <div className="flex flex-col sm:flex-row sm:justify-start gap-4 mb-2">
           {/* Date */}
-          <div className="text-gray-500 text-sm min-w-32">2016 — 2017</div>
+          <div className="text-gray-500 text-sm min-w-32">{date}</div>
   
           {/* Title and Content */}
           <div>
             {/* Title */}
             <a
-              href="https://scoutstudio.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white font-medium group-hover:text-teal-400 hover:underline"
-            >
-              Developer · Scout Studio
-            </a>
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-md font-semibold text-white group-hover/inner:text-teal-400 flex items-center gap-2"
+          >
+            {title}
+            <FiArrowUpRight className="transition-transform duration-300 transform -ml-1 -mb-1 group-hover/inner:translate-x-1 group-hover/inner:translate-y-[-3px]" />
+          </a>
   
             {/* Description */}
             <div>
-              <p className="text-gray-400 mt-2">
-                Collaborated with other student designers and engineers on pro-bono
-                projects to create new brands, design systems, and websites for
-                organizations in the community.
+              <p className="text-sm text-gray-400 mt-2">
+              {description}
               </p>
             </div>
   
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-4">
-              <span className="bg-gray-800 text-teal-400 text-xs px-3 py-1 rounded-full">
-                Jekyll
+          <div className="flex flex-wrap gap-2 mt-4">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="bg-gray-800 text-teal-400 text-xs px-3 py-1 rounded-full"
+              >
+                {tag}
               </span>
-              <span className="bg-gray-800 text-teal-400 text-xs px-3 py-1 rounded-full">
-                SCSS
-              </span>
-              <span className="bg-gray-800 text-teal-400 text-xs px-3 py-1 rounded-full">
-                JavaScript
-              </span>
-              <span className="bg-gray-800 text-teal-400 text-xs px-3 py-1 rounded-full">
-                WordPress
-              </span>
-            </div>
+            ))}
+          </div>
           </div>
         </div>
       </div>

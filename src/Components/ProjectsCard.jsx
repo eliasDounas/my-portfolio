@@ -26,13 +26,13 @@ export default function ProjectsCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg font-bold text-teal-400 group-hover/inner:underline flex items-center gap-2"
+            className="text-md font-semibold text-white group-hover/inner:text-teal-400 flex items-center gap-2"
           >
             {title}
             <FiArrowUpRight className="transition-transform duration-300 transform -ml-1 -mb-1 group-hover/inner:translate-x-1 group-hover/inner:translate-y-[-3px]" />
           </a>
 
-          <p className="text-gray-400 mt-1">{description}</p>
+          <p className="text-gray-400 text-sm mt-1">{description}</p>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-4">

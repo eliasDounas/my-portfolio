@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { useEffect } from "react";
-import Nav from "./Nav";
 
 const NameBio = () => {
   const [text, setText] = useState("Elias Dounas");
@@ -45,7 +44,7 @@ const NameBio = () => {
   return (
     <div className="max-w-lg">
       <h1
-        className="text-white text-6xl whitespace-nowrap -tracking-wide rounded-[clamp(0.4rem,0.75vw,1rem)] font-semibold"
+        className="text-white text-5xl whitespace-nowrap -tracking-wide rounded-[clamp(0.4rem,0.75vw,1rem)] font-semibold"
         onMouseOver={handleMouseOver}
       >
         {text}

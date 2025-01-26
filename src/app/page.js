@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import NameBio from "../Components/NameBio";
 import Nav from "@/Components/Nav";
 import ProjectsList from "@/Components/ProjectsList";
-import ExperienceCard from "@/Components/ExpCard";
+import ExperienceList from "@/Components/ExpList";
 
 export default function Home() {
   const auraRef = useRef(null);
@@ -66,7 +66,7 @@ export default function Home() {
             </section>
             
             <section id="experience" className="mt-20">
-                <ExperienceCard />
+                <ExperienceList />
             </section>
             <section id="projects" className="mt-20">
                 <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Projects</h3>
