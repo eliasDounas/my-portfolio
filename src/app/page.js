@@ -61,6 +61,8 @@ export default function Home() {
                 expedita beatae distinctio sapiente modi mollitia illo, earum
                 sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 </p>
+                
+
             </section>
             
             <section id="experience" className="mt-20">

@@ -20,7 +20,7 @@ const projects = [
 
 export default function ProjectsList() {
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-6 group/outer">
       {projects.map((project, index) => (
         <ProjectsCard key={index} {...project} />
       ))}

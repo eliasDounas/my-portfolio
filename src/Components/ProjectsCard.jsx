@@ -1,8 +1,14 @@
 import { FiArrowUpRight } from "react-icons/fi";
 
-export default function ProjectsCard({ imageSrc, title, link, description, tags }) {
+export default function ProjectsCard({
+  imageSrc,
+  title,
+  link,
+  description,
+  tags,
+}) {
   return (
-    <div className="group max-w-xl p-6 bg-gray-900 text-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer">
+    <div className="group/inner max-w-xl p-6 hover:bg-gray-900 hover:!opacity-100 group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
       {/* Card Header */}
       <div className="flex items-start gap-4">
         {/* Image */}
@@ -20,10 +26,10 @@ export default function ProjectsCard({ imageSrc, title, link, description, tags 
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg font-bold text-teal-400 group-hover:underline flex items-center gap-2"
+            className="text-lg font-bold text-teal-400 group-hover/inner:underline flex items-center gap-2"
           >
             {title}
-            <FiArrowUpRight className="transition-transform duration-300 transform -ml-1 -mb-1 group-hover:translate-x-1 group-hover:translate-y-[-3px]" />
+            <FiArrowUpRight className="transition-transform duration-300 transform -ml-1 -mb-1 group-hover/inner:translate-x-1 group-hover/inner:translate-y-[-3px]" />
           </a>
 
           <p className="text-gray-400 mt-1">{description}</p>
