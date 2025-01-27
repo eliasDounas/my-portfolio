@@ -6,6 +6,8 @@ import NameBio from "../Components/NameBio";
 import Nav from "@/Components/Nav";
 import ProjectsList from "@/Components/ProjectsList";
 import ExperienceList from "@/Components/ExpList";
+import { ViewResume } from "@/Components/ViewResume";
+import { Footer } from "@/Components/Footer";
 
 export default function Home() {
   const auraRef = useRef(null);
@@ -26,7 +28,7 @@ export default function Home() {
 
   return (
     <div className="h-screen overflow-y-hidden">
-      <div className="container h-full mx-auto xl:px-30 max-w-6xl">
+      <div className="container h-full mx-auto max-w-6xl px-10">
         <div className="grid grid-cols-5 h-full gap-40">
           <div className="col-span-2 mt-20">
             <NameBio />
@@ -42,8 +44,8 @@ export default function Home() {
               no-scrollbar
           "
           >
-            <section id="about" className="mt-20">
-              <p className="text-gray-400">
+            <section id="about" className="mt-20 max-w-xl">
+              <p className="text-gray-400 px-6">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe enim suscipit officia fuga velit nesciunt fugit voluptas ipsum? Culpa asperiores maxime doloribus enim facere repellendus alias iure dolorem ex pariatur! 
                 Epellendus reprehenderit enim?...LoremLorem ipsum dolor, sit amet
                 consectetur adipisicing elit. Totam qui et in voluptas voluptatibus iusto atque hic quidem assumenda
@@ -61,17 +63,18 @@ export default function Home() {
                 expedita beatae distinctio sapiente modi mollitia illo, earum
                 sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 </p>
-                
-
             </section>
             
             <section id="experience" className="mt-20">
                 <ExperienceList />
+                <ViewResume />
             </section>
             <section id="projects" className="mt-20">
                 <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Projects</h3>
                 <ProjectsList />
+                
             </section>
+            <Footer />
           </div>
         </div>
       </div>

@@ -8,12 +8,12 @@ export default function ProjectsCard({
   tags,
 }) {
   return (
-    <div className="group/inner max-w-xl p-6 hover:bg-gray-900 hover:!opacity-100 group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
+    <div className="group/inner max-w-xl p-6 hover:bg-gray-900/50 hover:!opacity-100 group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
       {/* Card Header */}
       <div className="flex items-start gap-4">
         {/* Image */}
         <div
-          className="bg-gray-800 rounded-lg h-20 w-32 flex-shrink-0"
+          className="bg-gray-800 rounded h-[70px] w-32 flex-shrink-0 peer-hover:ring-1 ring-slate-500"
           style={{
             backgroundImage: `url(${imageSrc})`,
             backgroundSize: "cover",
@@ -26,7 +26,7 @@ export default function ProjectsCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-md font-semibold text-white group-hover/inner:text-teal-400 flex items-center gap-2"
+            className="text-base font-medium text-white group-hover/inner:text-teal-400 flex items-center gap-2"
           >
             {title}
             <FiArrowUpRight className="transition-transform duration-300 transform -ml-1 -mb-1 group-hover/inner:translate-x-1 group-hover/inner:translate-y-[-3px]" />

@@ -2,9 +2,9 @@ import ExperienceCard from "./ExpCard";
 
 const experience = [
   {
-    date: "2016 — 2017", 
-    title: "brittanychiang.com (v4)",
-    link: "https://brittanychiang.com",
+    date: "JUNE — SEP 2024", 
+    title: "Stage e-ESJ",
+    link: "https://www.sante.gov.ma/Pages/ADM_Centrale/DP.aspx",
     description: "An old portfolio site built with Gatsby with 6k+ stars and 3k+ forks",
     tags: ["Gatsby", "Styled Components", "Netlify"],
   },
