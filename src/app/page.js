@@ -8,6 +8,7 @@ import ProjectsList from "@/Components/ProjectsList";
 import ExperienceList from "@/Components/ExpList";
 import { ViewResume } from "@/Components/ViewResume";
 import { Footer } from "@/Components/Footer";
+import Socials from "@/Components/Socials";
 
 export default function Home() {
   const auraRef = useRef(null);
@@ -27,25 +28,27 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen overflow-y-hidden">
+    <div className="h-screen overflow-y-auto">
       <div className="container h-full mx-auto max-w-6xl px-10">
-        <div className="grid grid-cols-5 h-full gap-40">
-          <div className="col-span-2 mt-20">
+        <div className="lg:grid lg:grid-cols-5 h-full lg:gap-20 xl:gap-40">
+          <div className="col-span-2 mt-14 lg:mt-20">
             <NameBio />
             <Nav /> 
-            <div ref={auraRef} className="mouse-aura" />
+            <Socials />
+            <div ref={auraRef} className="mouse-aura hidden sm:block" />
           </div>
           <div
             className="
               right-side
-              col-span-2 
               lg:col-span-3  
               overflow-y-auto
               no-scrollbar
+              scroll-smooth
           "
           >
-            <section id="about" className="mt-20 max-w-xl">
-              <p className="text-gray-400 px-6">
+            <section id="about" className="pt-16 lg:pt-20 lg:max-w-xl">
+              <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">About</h3>
+              <p className="text-gray-400 lg:px-6">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe enim suscipit officia fuga velit nesciunt fugit voluptas ipsum? Culpa asperiores maxime doloribus enim facere repellendus alias iure dolorem ex pariatur! 
                 Epellendus reprehenderit enim?...LoremLorem ipsum dolor, sit amet
                 consectetur adipisicing elit. Totam qui et in voluptas voluptatibus iusto atque hic quidem assumenda
@@ -65,11 +68,12 @@ export default function Home() {
                 </p>
             </section>
             
-            <section id="experience" className="mt-20">
+            <section id="experience" className="pt-20">
+                <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Experience </h3>
                 <ExperienceList />
                 <ViewResume />
             </section>
-            <section id="projects" className="mt-20">
+            <section id="projects" className="pt-20">
                 <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Projects</h3>
                 <ProjectsList />
                 
@@ -81,3 +85,5 @@ export default function Home() {
     </div>
   );
 }
+
+

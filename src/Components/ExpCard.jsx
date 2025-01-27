@@ -8,9 +8,9 @@ export default function ExperienceCard({
   tags,
 }) {
     return (
-      <div className="group/inner max-w-xl p-6 hover:bg-gray-900/50 hover:!opacity-100 group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
+      <div className="group/inner lg:max-w-xl lg:p-6 lg:hover:bg-gray-900/50 lg:hover:!opacity-100 lg:group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg lg:hover:shadow-xl cursor-pointer">
         {/* Responsive Layout for Date + Title */}
-        <div className="flex flex-col sm:flex-row sm:justify-start gap-4 mb-2">
+        <div className="flex flex-col sm:flex-row sm:justify-start sm:gap-4 gap-3 mb-2">
           {/* Date */}
           <div className="text-gray-500 text-xs min-w-32">{date}</div>
   

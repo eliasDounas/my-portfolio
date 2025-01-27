@@ -8,7 +8,7 @@ export default function ProjectsCard({
   tags,
 }) {
   return (
-    <div className="group/inner max-w-xl p-6 hover:bg-gray-900/50 hover:!opacity-100 group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
+    <div className="group/inner lg:max-w-xl lg:p-6 lg:hover:bg-gray-900/50 lg:hover:!opacity-100 lg:group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
       {/* Card Header */}
       <div className="flex items-start gap-4">
         {/* Image */}
