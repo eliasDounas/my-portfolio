@@ -3,12 +3,13 @@ import { FiArrowUpRight } from "react-icons/fi";
 export default function ExperienceCard({
   date,
   title,
+  role,
   link,
   description,
   tags,
 }) {
     return (
-      <div className="group/inner lg:max-w-xl lg:p-6 lg:hover:bg-gray-900/50 lg:hover:!opacity-100 lg:group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg lg:hover:shadow-xl cursor-pointer">
+      <div className="group/inner lg:max-w-2xl lg:p-6 lg:hover:bg-gray-900/50 lg:hover:!opacity-100 lg:group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg lg:hover:shadow-xl cursor-pointer">
         {/* Responsive Layout for Date + Title */}
         <div className="flex flex-col sm:flex-row sm:justify-start sm:gap-4 gap-3 mb-2">
           {/* Date */}
@@ -29,6 +30,7 @@ export default function ExperienceCard({
   
             {/* Description */}
             <div>
+              <span className="text-gray-400/85 mt-1" >{role}</span>
               <p className="text-sm text-gray-400 mt-2">
               {description}
               </p>

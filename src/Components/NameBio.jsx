@@ -55,10 +55,7 @@ const NameBio = () => {
       </h2>
 
       <h1 className="my-4 max-w-lg text-gray-400">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error nobis
-        dignissimos, tempora voluptatibus temporibus facilis odit eligendi
-        explicabo nostrum veniam vero saepe aliquam dolore! Tenetur ullam sed
-        distinctio. Recusandae, obcaecati.
+      I build software that bridges creativity and technical excellence.
       </h1>
 
       

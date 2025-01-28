@@ -8,7 +8,7 @@ export default function ProjectsCard({
   tags,
 }) {
   return (
-    <div className="group/inner lg:max-w-xl lg:p-6 lg:hover:bg-gray-900/50 lg:hover:!opacity-100 lg:group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
+    <div className="group/inner lg:max-w-2xl lg:p-6 lg:hover:bg-gray-900/50 lg:hover:!opacity-100 lg:group-hover/outer:opacity-50 transition-opacity text-white rounded shadow-lg hover:shadow-xl cursor-pointer">
       {/* Card Header */}
       <div className="flex items-start gap-4">
         {/* Image */}
@@ -26,16 +26,21 @@ export default function ProjectsCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-base font-medium text-white group-hover/inner:text-teal-400 flex items-center gap-2"
+            className="text-base font-medium text-white group-hover/inner:text-teal-400 flex items-center gap-2 -mt-1"
           >
             {title}
             <FiArrowUpRight className="transition-transform duration-300 transform -ml-1 -mb-1 group-hover/inner:translate-x-1 group-hover/inner:translate-y-[-3px]" />
           </a>
 
-          <p className="text-gray-400 text-sm mt-1">{description}</p>
+          <p
+            className="text-gray-400 text-sm mt-1"
+            dangerouslySetInnerHTML={{
+              __html: description.replace(/\n/g, "<br />"),
+            }}
+          ></p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          {tags && <div className="flex flex-wrap gap-2 mt-4">
             {tags.map((tag, index) => (
               <span
                 key={index}
@@ -44,7 +49,7 @@ export default function ProjectsCard({
                 {tag}
               </span>
             ))}
-          </div>
+          </div>}
         </div>
       </div>
     </div>

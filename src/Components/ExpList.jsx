@@ -2,13 +2,19 @@ import ExperienceCard from "./ExpCard";
 
 const experience = [
   {
-    date: "JUNE — SEP 2024", 
-    title: "Stage e-ESJ",
-    link: "https://www.sante.gov.ma/Pages/ADM_Centrale/DP.aspx",
-    description: "An old portfolio site built with Gatsby with 6k+ stars and 3k+ forks LoermAn old portfolio site built with Gatsby with 6k+ stars and 3k+ forks LoermAn old portfolio site built with Gatsby with 6k+ stars and 3k+ forks LoermAn old portfolio site built with Gatsby with 6k+ stars and 3k+ forks LoermAn old portfolio site built with Gatsby with 6k+ stars and 3k+ forks Loerm",
-    tags: ["Gatsby", "Styled Components", "Netlify"],
+    date: "JUNE — SEP 2024",
+    title: "e-ESJ · Ministère de la Santé et de la Protection Sociale",
+    role: "Software Engineer Intern",
+    link: "https://santejeunes.ma/",
+    description: `
+      Collaborated with a cross-functional team to develop the e-ESJ health platform, focusing on patient data management and healthcare services. 
+      Engineered a secure user registration and authentication system, designed Figma mockups, and implemented key frontend features. 
+      Conducted rigorous code reviews and managed pull requests to ensure the delivery of high-quality UI components.
+    `,
+    tags: ["Figma", "Next.js", "Tailwind", "Spring Boot"],
   },
 ];
+
 
 export default function ExpList() {
   return (

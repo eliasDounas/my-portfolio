@@ -4,6 +4,7 @@ import BlobAnimation from "../Components/BlobAnimation";
 import { useEffect, useRef } from "react";
 import NameBio from "../Components/NameBio";
 import Nav from "@/Components/Nav";
+import { About } from "@/Components/About";
 import ProjectsList from "@/Components/ProjectsList";
 import ExperienceList from "@/Components/ExpList";
 import { ViewResume } from "@/Components/ViewResume";
@@ -12,7 +13,14 @@ import Socials from "@/Components/Socials";
 
 export default function Home() {
   const auraRef = useRef(null);
+  const leftSide = useRef(null);
+  const rightSide = useRef(null);
 
+  const handleScroll = () => {
+    if (leftSide.current && rightSide.current) {
+      rightSide.current.scrollTop = leftSide.current.scrollTop;
+    }
+  };
   useEffect(() => {
     const updateAuraPosition = (e) => {
       if (auraRef.current) {
@@ -29,43 +37,28 @@ export default function Home() {
 
   return (
     <div className="h-screen overflow-y-auto">
-      <div className="container h-full mx-auto max-w-6xl px-10">
+      <div className="container h-full mx-auto max-w-6xl px-6 sm:px-10 md:px-14  xl:px-0">
         <div className="lg:grid lg:grid-cols-5 h-full lg:gap-20 xl:gap-40">
-          <div className="col-span-2 mt-14 lg:mt-20">
+          <div ref={leftSide} className="col-span-2 mt-10 lg:mt-20 overflow-auto"
+          onScroll={handleScroll}>
             <NameBio />
             <Nav /> 
             <Socials />
             <div ref={auraRef} className="mouse-aura hidden sm:block" />
           </div>
           <div
+          ref={rightSide}
             className="
               right-side
               lg:col-span-3  
-              overflow-y-auto
+              overflow-auto
               no-scrollbar
               scroll-smooth
           "
           >
-            <section id="about" className="pt-16 lg:pt-20 lg:max-w-xl">
+            <section id="about" className="pt-16 lg:pt-20 lg:max-w-2xl">
               <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">About</h3>
-              <p className="text-gray-400 lg:px-6">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe enim suscipit officia fuga velit nesciunt fugit voluptas ipsum? Culpa asperiores maxime doloribus enim facere repellendus alias iure dolorem ex pariatur! 
-                Epellendus reprehenderit enim?...LoremLorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Totam qui et in voluptas voluptatibus iusto atque hic quidem assumenda
-                eaque reiciendis, expedita beatae distinctio sapiente modi
-                mollitia illo, earum sint?Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Totam qui et in voluptas
-                voluptatibus iusto atque hic quidem assumenda eaque reiciendis,
-                expedita beatae distinctio sapiente modi mollitia illo, earum
-                sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Totam qui et in voluptas voluptatibus iusto atque hic quidem
-                assumenda eaque reiciendis, expedita beatae distinctio sapiente
-                modi mollitia illo, earum sint?Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Totam qui et in voluptas
-                voluptatibus iusto atque hic quidem assumenda eaque reiciendis,
-                expedita beatae distinctio sapiente modi mollitia illo, earum
-                sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
+              <About />
             </section>
             
             <section id="experience" className="pt-20">
