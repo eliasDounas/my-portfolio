@@ -1,5 +1,5 @@
 "use client";
-import ThemeSwitch from "../Components/ThemeSwitch";
+
 import BlobAnimation from "../Components/BlobAnimation";
 import { useEffect, useRef } from "react";
 import NameBio from "../Components/NameBio";

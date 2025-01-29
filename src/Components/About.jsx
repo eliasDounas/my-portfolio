@@ -2,7 +2,7 @@ export const About = () => {
   return (
     <div className="text-gray-400 lg:px-6">
       <p className=""></p>
-      I'm a software engineering student at{" "}
+      I&apos;m a software engineering student at{" "}
       <a
         href="http://www.inpt.ac.ma/"
         target="_blank"
@@ -17,9 +17,9 @@ export const About = () => {
       creating efficient and scalable applications.
       <br />
       <br />
-      Currently, I'm focused on expanding my expertise in modern web
+      Currently, I&apos;m focused on expanding my expertise in modern web
       technologies and cloud infrastructure. Throughout my academic journey,
-      I've had the opportunity to work on{" "}
+      I&apos;ve had the opportunity to work on{" "}
       <a href="#projects" className="text-white/90 hover:text-teal-400">
         various projects
       </a>{" "}
@@ -38,7 +38,7 @@ export const About = () => {
         LeetCode
       </a>{" "}
       , contributing to open-source projects, and staying up-to-date with the
-      latest industry trends. When I'm not coding, you can find me playing video
+      latest industry trends. When I&apos;m not coding, you can find me playing video
       games with friends or enjoying late night walks.
     </div>
   );
