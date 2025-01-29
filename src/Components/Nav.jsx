@@ -39,7 +39,7 @@ const Nav = () => {
       {
         root: null,
         rootMargin: '-5% 0px -5% 0px', // Reduced margins
-        threshold: 0.6 // Added lower threshold for better detection
+        threshold: 0.7 // Added lower threshold for better detection
       }
     );
 

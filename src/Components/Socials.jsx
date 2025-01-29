@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-
+ 
 const Socials = () => {
     return ( <div className="flex gap-4 py-4">
         <a href="https://github.com/eliasDounas" target="_blank" 
