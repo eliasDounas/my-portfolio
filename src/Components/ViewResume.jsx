@@ -1,11 +1,11 @@
 import { FiArrowUpRight } from "react-icons/fi";
 
 export const ViewResume = () => {
-  const link = "https://example.com"; // Replace with your link
+  const resumeLink = "/CV.pdf"; // Local file in the public folder
 
   return (
     <a
-      href={link}
+      href={resumeLink}
       target="_blank"
       rel="noopener noreferrer"
       className="group text-base font-medium lg:px-6 text-white hover:text-teal-400 flex items-center gap-2 mt-7 lg:mt-5"

@@ -11,72 +11,64 @@ import { ViewResume } from "@/Components/ViewResume";
 import { Footer } from "@/Components/Footer";
 import Socials from "@/Components/Socials";
 
-export default function Home() {
-  const auraRef = useRef(null);
-  const leftSide = useRef(null);
-  const rightSide = useRef(null);
+  export default function Home() {
+    const auraRef = useRef(null);
+    
+    useEffect(() => {
+      const updateAuraPosition = (e) => {
+        if (auraRef.current) {
+          auraRef.current.style.setProperty("--mouse-x", `${e.clientX}px`);
+          auraRef.current.style.setProperty("--mouse-y", `${e.clientY}px`);
+        }
+      };
+      window.addEventListener("pointermove", updateAuraPosition);
 
-  const handleScroll = () => {
-    if (leftSide.current && rightSide.current) {
-      rightSide.current.scrollTop = leftSide.current.scrollTop;
-    }
-  };
-  useEffect(() => {
-    const updateAuraPosition = (e) => {
-      if (auraRef.current) {
-        auraRef.current.style.setProperty("--mouse-x", `${e.clientX}px`);
-        auraRef.current.style.setProperty("--mouse-y", `${e.clientY}px`);
-      }
-    };
-    window.addEventListener("pointermove", updateAuraPosition);
+      return () => {
+        window.removeEventListener("pointermove", updateAuraPosition);
+      };
+    }, []);
 
-    return () => {
-      window.removeEventListener("pointermove", updateAuraPosition);
-    };
-  }, []);
-
-  return (
-    <div className="h-screen overflow-y-auto">
-      <div className="container h-full mx-auto max-w-6xl px-6 sm:px-10 md:px-14  xl:px-0">
-        <div className="lg:grid lg:grid-cols-5 h-full lg:gap-20 xl:gap-40">
-          <div ref={leftSide} className="col-span-2 mt-10 lg:mt-20 overflow-auto"
-          onScroll={handleScroll}>
+    return (
+      <div className="flex justify-center w-full">
+        <div className="flex flex-col lg:flex-row scroll-smooth">
+          {/* Left Sticky Sidebar */}
+          <div className="block lg:sticky lg:top-0 lg:left-0 lg:max-w-md xl:max-w-xl p-6 sm:p-10 lg:py-20 lg:pl-12 xl:px-20 h-auto lg:h-screen ">
             <NameBio />
-            <Nav /> 
+            <Nav />
             <Socials />
-            <div ref={auraRef} className="mouse-aura hidden sm:block" />
+            <div
+              ref={auraRef}
+              className="mouse-aura hidden sm:block"
+            />
           </div>
-          <div
-          ref={rightSide}
-            className="
-              right-side
-              lg:col-span-3  
-              overflow-auto
-              no-scrollbar
-              scroll-smooth
-          "
-          >
-            <section id="about" className="pt-16 lg:pt-20 lg:max-w-2xl">
+    
+          {/* Right Scrollable Content */}
+          <div className="right-side flex-1 px-6 sm:px-10 w-full">
+            {/* About Section */}
+            <section id="about" className="pt-16 lg:pt-20 lg:max-w-2xl ">
               <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">About</h3>
               <About />
             </section>
-            
-            <section id="experience" className="pt-20">
-                <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Experience </h3>
-                <ExperienceList />
-                <ViewResume />
+    
+            {/* Experience Section */}
+            <section id="experience" className="pt-28">
+              <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Experience</h3>
+              <ExperienceList />
+              <ViewResume />
             </section>
+    
+            {/* Projects Section */}
             <section id="projects" className="pt-20">
-                <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Projects</h3>
-                <ProjectsList />
-                
+              <h3 className="font-semibold text-lg text-white mb-6 lg:hidden">Projects</h3>
+              <ProjectsList />
             </section>
+    
+            {/* Footer */}
             <Footer />
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
+        </div>
+    );
+  }
 
 
