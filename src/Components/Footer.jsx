@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <p className="text-gray-500 text-sm max-w-[450px] lg:p-6 my-20">
+    <p className="text-gray-500 text-sm max-w-[600px] lg:p-6 my-20">
       Based on{" "}
       <a
         href="https://brittanychiang.com/"
@@ -38,7 +38,14 @@ export const Footer = () => {
       >
         Tailwind CSS
       </a>
-      .
+      . Deployed with <a
+        href="https://vercel.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 cursor-pointer hover:underline"
+      >
+        Vercel
+      </a>.
     </p>
   );
 };
