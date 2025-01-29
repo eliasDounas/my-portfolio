@@ -20,11 +20,12 @@ const Nav = () => {
         });
       },
       {
-        root: null, 
-        threshold: 0.3,
+        root: null, // Viewport as the root
+        threshold: 0.5, // Set to 50% visibility to activate the section
       }
     );
 
+    // Observe all sections inside the right-side container
     rightSideContainer.querySelectorAll("section").forEach((section) => {
       observer.observe(section);
     });
