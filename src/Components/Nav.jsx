@@ -1,62 +1,41 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const Nav = () => {
   const [activeSection, setActiveSection] = useState("about");
-  const lastScrollY = useRef(0);
-  const scrollingDown = useRef(true);
 
   useEffect(() => {
-    const updateScrollDirection = () => {
-      const currentScrollY = window.scrollY;
-      scrollingDown.current = currentScrollY > lastScrollY.current;
-      lastScrollY.current = currentScrollY;
-    };
+    const rightSideContainer = document.querySelector(".right-side");
+    if (!rightSideContainer) {
+      return; // Exit early if right-side container is not found
+    }
 
-    window.addEventListener('scroll', updateScrollDirection);
-
+    // Initialize the IntersectionObserver to detect section visibility
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleEntries = entries.filter(entry => entry.isIntersecting);
-        
-        if (visibleEntries.length > 0) {
-          // Special handling for last section (Projects)
-          const projectsSection = visibleEntries.find(entry => entry.target.id === 'projects');
-          if (projectsSection && projectsSection.intersectionRatio > 0.3) {
-            setActiveSection('projects');
-            return;
+        entries.forEach((entry) => {
+          // Set the active section if the section is in view (intersection ratio above 50%)
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            setActiveSection(entry.target.id);
           }
-
-          // For other sections
-          const targetEntry = scrollingDown.current
-            ? visibleEntries[visibleEntries.length - 1]
-            : visibleEntries[0];
-
-          if (targetEntry && targetEntry.intersectionRatio > 0.5) {
-            setActiveSection(targetEntry.target.id);
-          }
-        }
+        });
       },
       {
-        root: null,
-        rootMargin: '-5% 0px -5% 0px', // Reduced margins
-        threshold: 0.7 // Added lower threshold for better detection
+        root: null, 
+        threshold: 0.3,
       }
     );
 
-    // Add small delay to ensure DOM is ready
-    setTimeout(() => {
-      const sections = document.querySelectorAll("section[id]");
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    }, 100);
+    rightSideContainer.querySelectorAll("section").forEach((section) => {
+      observer.observe(section);
+    });
 
+    // Cleanup observer on component unmount
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', updateScrollDirection);
     };
   }, []);
 
+  // NavLink component for each section link
   const NavLink = ({ id, label }) => (
     <a
       href={`#${id}`}
