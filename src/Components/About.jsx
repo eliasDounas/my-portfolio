@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <div className="text-gray-400 lg:px-6">
+    <div className="text-gray-400 lg:px-6 text-body leading-relaxed">
       <p className=""></p>
       I&apos;m a software engineering student at{" "}
       <a
