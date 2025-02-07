@@ -25,7 +25,7 @@ const NameBio = () => {
             }
             return letters[Math.floor(Math.random() * 26)];
           })
-          .join("")
+          .join(""),
       );
 
       if (iteration >= targetText.length) {
@@ -55,10 +55,8 @@ const NameBio = () => {
       </h2>
 
       <h1 className="my-4 max-w-lg text-gray-400">
-      I build software that bridges creativity and technical excellence.
+        I build software that bridges creativity and technical excellence.
       </h1>
-
-      
     </div>
   );
 };

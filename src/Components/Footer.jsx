@@ -10,8 +10,8 @@ export const Footer = () => {
       >
         Brittany Chiang&apos;s website
       </a>{" "}
-      (they&apos;re awesome). All design credits go to Brittany Chiang. Coded from
-      scratch in{" "}
+      (they&apos;re awesome). All design credits go to Brittany Chiang. Coded
+      from scratch in{" "}
       <a
         href="https://code.visualstudio.com/"
         target="_blank"
@@ -38,14 +38,16 @@ export const Footer = () => {
       >
         Tailwind CSS
       </a>
-      . Deployed with <a
+      . Deployed with{" "}
+      <a
         href="https://vercel.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-400 cursor-pointer hover:underline"
       >
         Vercel
-      </a>.
+      </a>
+      .
     </p>
   );
 };

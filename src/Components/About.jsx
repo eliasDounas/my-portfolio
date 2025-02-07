@@ -38,8 +38,8 @@ export const About = () => {
         LeetCode
       </a>{" "}
       , contributing to open-source projects, and staying up-to-date with the
-      latest industry trends. When I&apos;m not coding, you can find me playing video
-      games with friends or enjoying late night walks.
+      latest industry trends. When I&apos;m not coding, you can find me playing
+      video games with friends or enjoying late night walks.
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { FiArrowUpRight } from "react-icons/fi";
 
 export const ViewResume = () => {
-  const resumeLink = "/CV.pdf"; // Local file in the public folder
+  const resumeLink = "/CV-Elias-Dounas.pdf";
 
   return (
     <a
@@ -15,4 +15,3 @@ export const ViewResume = () => {
     </a>
   );
 };
-

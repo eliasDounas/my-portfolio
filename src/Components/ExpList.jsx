@@ -15,7 +15,6 @@ const experience = [
   },
 ];
 
-
 export default function ExpList() {
   return (
     <div className="grid gap-6 group/outer">

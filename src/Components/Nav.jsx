@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Nav = () => {
   const [activeSection, setActiveSection] = useState("about");
@@ -22,7 +22,7 @@ const Nav = () => {
       {
         root: null, // Viewport as the root
         threshold: 0.5, // Set to 50% visibility to activate the section
-      }
+      },
     );
 
     // Observe all sections inside the right-side container
@@ -38,10 +38,7 @@ const Nav = () => {
 
   // NavLink component for each section link
   const NavLink = ({ id, label }) => (
-    <a
-      href={`#${id}`}
-      className="group flex items-center space-x-2"
-    >
+    <a href={`#${id}`} className="group flex items-center space-x-2">
       <span
         className={`h-[1.5px] mr-3 transition-all duration-300 ease-in-out ${
           activeSection === id ? "bg-white w-16" : "bg-gray-500 w-8"
