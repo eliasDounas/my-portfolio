@@ -10,7 +10,7 @@ export const About = () => {
         className="text-white/90 hover:text-teal-400"
       >
         INPT
-      </a>{" "}
+      </a>
       , I am passionate about developing innovative solutions to real-world challenges. My interests include full-stack development, cloud technologies, and DevOps practices, with a strong focus on building efficient and scalable applications.
       <br />
       <br />
