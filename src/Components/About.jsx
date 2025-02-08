@@ -2,7 +2,7 @@ export const About = () => {
   return (
     <div className="text-gray-400 lg:px-6 text-body leading-relaxed">
       <p className=""></p>
-      I&apos;m a software engineering student at{" "}
+      As a software engineering student at{" "}
       <a
         href="http://www.inpt.ac.ma/"
         target="_blank"
@@ -11,10 +11,7 @@ export const About = () => {
       >
         INPT
       </a>{" "}
-      passionate about building innovative solutions that solve real-world
-      problems. My interests span across full-stack development, cloud
-      technologies, and DevOps practices, with a particular enthusiasm for
-      creating efficient and scalable applications.
+      , I am passionate about developing innovative solutions to real-world challenges. My interests include full-stack development, cloud technologies, and DevOps practices, with a strong focus on building efficient and scalable applications.
       <br />
       <br />
       Currently, I&apos;m focused on expanding my expertise in modern web
